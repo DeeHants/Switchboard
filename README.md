@@ -20,6 +20,8 @@ This should involve the following technologies:
 
 ## Hardware
 
+To support wireless, and 20+ GPIO lines, this is running on the [Raspberry Pi Pico 2 W](https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html#pico2w-technical-specification) micro controller, running custom C++ firmware.
+
 ### Inputs
 
 After raiding various local electronics shops, I have a selection of switches, buttons, and other inputs ([full details](inputs.md)).
