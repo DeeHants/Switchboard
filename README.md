@@ -18,6 +18,12 @@ This should involve the following technologies:
 - WebSockets for device <-> browser communications
 - Responsive web inteface (e.g. React or Canvas)
 
+## Hardware
+
+### Inputs
+
+After raiding various local electronics shops, I have a selection of switches, buttons, and other inputs ([full details](inputs.md)).
+
 ## Copyright
 
 Licensed under the BSD 3-Clause License.
