@@ -38,6 +38,7 @@ pico_sdk_init()
 add_executable(
     controller
     controller.cpp
+    i2c.cpp
     wifi.cpp
 )
 

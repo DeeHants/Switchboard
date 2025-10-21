@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
-#include "hardware/i2c.h"
 #include "hardware/pio.h"
 #include "hardware/timer.h"
 #include "hardware/clocks.h"
 
 // Modularised functionality
+#include "i2c.h"
 #include "wifi.h"
 
 // Local pin definitions
@@ -38,14 +38,8 @@ int main()
     // Initialise the Wi-Fi chip
     wifi_init();
 
-    // I2C Initialisation. Using it at 400Khz.
-    i2c_init(I2C_PORT, I2C_BAUD_RATE);
-
-    gpio_set_function(I2C_SDA, GPIO_FUNC_I2C);
-    gpio_set_function(I2C_SCL, GPIO_FUNC_I2C);
-    gpio_pull_up(I2C_SDA);
-    gpio_pull_up(I2C_SCL);
-    // For more examples of I2C use see https://github.com/raspberrypi/pico-examples/tree/master/i2c
+    // I2C Initialisation
+    i2c_init2(I2C_PORT, I2C_BAUD_RATE, I2C_SDA, I2C_SCL);
 
     // PIO Blinking example
     PIO pio = pio0;
