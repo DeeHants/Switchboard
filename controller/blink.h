@@ -1,0 +1,1 @@
+int blink_init();
