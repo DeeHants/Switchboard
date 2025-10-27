@@ -8,7 +8,7 @@
 
 // I2C on I2C0 (4/5)
 #define I2C_PORT i2c0
-#define I2C_BAUD_RATE 400 * 1000 // 400KHz
+#define I2C_BAUD_RATE 100 * 1000 // 100KHz
 #define I2C_SDA 4
 #define I2C_SCL 5
 
