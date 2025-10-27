@@ -39,3 +39,4 @@
 
 // Neopixel output
 #define DIO_NEOP_DATA 20
+#define DIO_NEOP_FREQUENCY 800 * 1000 // 800kHz

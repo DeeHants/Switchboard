@@ -40,14 +40,16 @@ add_executable(
     controller.cpp
     blink.cpp
     i2c.cpp
+    neopixel.cpp
     wifi.cpp
 )
 
 pico_set_program_name(controller "controller")
 pico_set_program_version(controller "0.1")
 
-# Generate PIO header
+# Generate PIO headers
 pico_generate_pio_header(controller ${CMAKE_CURRENT_LIST_DIR}/blink.pio)
+pico_generate_pio_header(controller ${CMAKE_CURRENT_LIST_DIR}/ws2812.pio)
 
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(controller 1)

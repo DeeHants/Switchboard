@@ -6,6 +6,7 @@
 // Modularised functionality
 #include "blink.h"
 #include "i2c.h"
+#include "neopixel.h"
 #include "wifi.h"
 
 // Local pin definitions
@@ -29,6 +30,9 @@ int main()
     // PIO Blinking example
     blink_init();
 
+    // WS2812 Neopixel
+    neopixel_init(DIO_NEOP_DATA, DIO_NEOP_FREQUENCY);
+
     // Timer example code - This example fires off the callback after 2000ms
     add_alarm_in_ms(2000, alarm_callback, NULL, false);
     // For more examples of timer use see https://github.com/raspberrypi/pico-examples/tree/master/timer
@@ -41,6 +45,7 @@ int main()
     wifi_connect();
 
     while (true) {
+        neopixel_step();
         printf("Hello, world!\n");
         sleep_ms(1000);
     }
