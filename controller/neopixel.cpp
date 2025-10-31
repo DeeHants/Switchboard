@@ -8,7 +8,7 @@
 #include "ws2812.pio.h"
 #include "neopixel.h"
 
-#define NUM_PIXELS 5
+#define NUM_PIXELS 10
 
 static inline void put_pixel(PIO pio, uint sm, uint32_t pixel_grb);
 static inline uint32_t urgb_u32(uint8_t r, uint8_t g, uint8_t b);
@@ -40,7 +40,7 @@ int neopixel_init(uint pin, uint frequency) {
 
 void neopixel_step() {
     for (uint i = 0; i < NUM_PIXELS; ++i)
-        put_pixel(pio, sm, rand());
+        put_pixel(pio, sm, rand() & 0x003f3f3f);
 
     // sleep is called in the main loop
     // sleep_ms(10);
