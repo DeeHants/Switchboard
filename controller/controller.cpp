@@ -4,7 +4,6 @@
 #include "hardware/clocks.h"
 
 // Modularised functionality
-#include "blink.h"
 #include "i2c.h"
 #include "neopixel.h"
 #include "wifi.h"
@@ -26,9 +25,6 @@ int main()
 
     // I2C Initialisation
     i2c_init2(I2C_PORT, I2C_BAUD_RATE, I2C_SDA, I2C_SCL);
-
-    // PIO Blinking example
-    blink_init();
 
     // WS2812 Neopixel
     neopixel_init(DIO_NEOP_DATA, DIO_NEOP_FREQUENCY);
